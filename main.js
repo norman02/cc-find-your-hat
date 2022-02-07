@@ -6,13 +6,12 @@ const fieldCharacter = "░";
 const pathCharacter = "*";
 
 class Field {
-  constructor(arr) {
-    this._field = arr;
+  constructor(field) {
+    this._field = field;
   }
   print() {
-    this._field.forEach((e) => {
-      console.log(e.join(""));
-    });
+    this._field = this._field.join("\n");
+    console.log(this._field.replace(/,/g, ""));
   }
 }
 const blankArray = [
@@ -58,7 +57,7 @@ const blankArray = [
   ],
 ];
 
-const fieldArray = [blankArray, blankArray, blankArray]
+const fieldArray = [blankArray, blankArray, blankArray];
 
 const myField = new Field(fieldArray);
 
